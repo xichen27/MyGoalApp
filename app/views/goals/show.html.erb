@@ -1,0 +1,7 @@
+<h2><%=@goal.content%></h2>
+<p>Public: <%=@goal.ppublic%></p>
+<p>Completion: <%=@goal.completion%></p>
+
+<%=link_to "Edit Goal", edit_goal_url(@goal)%><br>
+<%=link_to "Go back to my page", user_url(current_user)%>
+

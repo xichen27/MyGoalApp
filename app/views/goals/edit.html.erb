@@ -1,0 +1,23 @@
+<h1>Edit the Goal</h1>
+<form action="<%= goal_url(@goal) %>" method="post" accept-charset="utf-8">
+  <input  type="hidden" name="_method" value="PUT">
+  <label for="goal_content" ><input type="text" name="goal[content]" id= "goal
+    _content" value="<%= @goal.content %>"></label>
+    
+  <label for="goal_ppublic" >
+    <select name="goal[ppublic]" id="goal_ppublic">
+      <option value="<%= true %>"<% "selected" if @goal.ppublic == true %>>Public</option>
+      <option value="<%= false %>"<% "selected" unless @goal.ppublic ==true %>>Private</option>
+    </select>
+  </label>
+      
+  <label for="goal_completion" >
+    <select name="goal[completion]" id="goal_completion">
+    
+      <option value="<%= true %>"<% "selected" if @goal.completion == true %>>Completed</option>
+      <option value="<%= false %>"<% "selected" unless @goal.completion == true %>>Not Completed</option>
+    </select>
+  </label>
+
+  <p><input type="submit" value="Update Goal"></p>
+</form>

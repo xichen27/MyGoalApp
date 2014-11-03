@@ -1,0 +1,15 @@
+<h1>Sign In</h1>
+
+<form action="<%=session_url%>" method="post" accept-charset="utf-8">
+  <label for="username">
+    Username
+    <input type="text" id="username" name="user[user_name]" value="<%=@user.user_name%>">
+  </label>
+  
+  <label for="password">
+    Password
+    <input type="password" id="password" name="user[password]" value="">
+  </label>
+
+  <p><input type="submit" value="Sign In"></p>
+</form>
