@@ -4,7 +4,7 @@ feature "User profile page displays and creates new goals" do
   context "when logged in" do
     before :each do
       sign_up("cookiemonster")
-      visit user_url(User.find_by(user_name: "cookiemonster"))
+      sign_in("cookiemonster")
     end
   
     scenario "display the user name" do
@@ -22,6 +22,7 @@ feature "User profile page displays and creates new goals" do
    scenario "can move back to users index" do
      expect(page).to have_content("All Users")
    end
+
    
   end
 end

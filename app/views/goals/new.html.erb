@@ -1,22 +1,22 @@
 <h1>Create a Goal</h1>
 <form action="<%= goals_url%>" method="post" accept-charset="utf-8">
-  <label for="goal_content" ><input type="text" name="goal[content]" id= "goal
-    _content" value="<%= @goal.content %>"></label>
+  <label for="goal_content" >Content<input type="text" name="goal[content]" id= "goal
+    _content" value="<%= @goal.content %>"></label><br>
     
-  <label for="goal_ppublic" >
+  <label for="goal_ppublic" >Public
     <select name="goal[ppublic]" id="goal_ppublic">
       <option value="<%= true %>">Public</option>
       <option value="<%= false %>">Private</option>
     </select>
-  </label>
+  </label><br>
       
-  <label for="goal_completion" >
+  <label for="goal_completion" >Completed?
     <select name="goal[completion]" id="goal_completion">
     
       <option value="<%= true %>">Completed</option>
       <option value="<%= false %>">Not Completed</option>
     </select>
-  </label>
+  </label><br>
 
   <p><input type="submit" value="Create a New Goal"></p>
 </form>

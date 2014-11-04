@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
   before_action :require_user
+  before_action :require_right_user, only: [:edit]
   def new
     @goal = Goal.new
     render :new
@@ -46,5 +47,12 @@ class GoalsController < ApplicationController
   
   def goal_params
     params.require(:goal).permit(:content, :ppublic, :completion)
+  end
+  
+  def require_right_user
+    @goal = Goal.find(params[:id])
+    unless @goal.user == current_user
+      redirect_to user_url(current_user)
+    end
   end
 end

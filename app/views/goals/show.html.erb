@@ -2,6 +2,8 @@
 <p>Public: <%=@goal.ppublic%></p>
 <p>Completion: <%=@goal.completion%></p>
 
-<%=link_to "Edit Goal", edit_goal_url(@goal)%><br>
+<% if current_user == @goal.user%>
+  <%=link_to "Edit Goal", edit_goal_url(@goal)%><br>
+<% end %>
 <%=link_to "Go back to my page", user_url(current_user)%>
 

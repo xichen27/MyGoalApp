@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user
+  before_action :require_user, except: [:new, :create]
   def index
     @users = User.all
   end
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    # fail
     render :show
   end
   
